@@ -13,7 +13,7 @@ class SycDaemon(Daemon):
                         time.sleep(CONF_DAEMON.get("LIMIT"))
 
 if __name__ == "__main__":
-    daemon = SycDaemon('/tmp/sync_daemon.pid')
+    daemon = SycDaemon(CONF_DAEMON.get("PID_PATH"))
     if len(sys.argv) == 2:
         if 'start' == sys.argv[1]:
             daemon.start()

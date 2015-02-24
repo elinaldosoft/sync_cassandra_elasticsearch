@@ -5,4 +5,3 @@ Antes de tudo você deve ter instalado:
  * CassandraDB http://cassandra.apache.org/download/ 
  * ElasticSearch http://www.elasticsearch.org/overview/elkdownloads/
  * Python >= 2.7
- 
