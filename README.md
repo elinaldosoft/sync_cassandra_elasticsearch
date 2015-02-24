@@ -1,2 +1,6 @@
-Sync CassandraDb to ElasticSearch é uma ferramenta conceito feito para demostrar que é possível sincronizar dados 
-entre fontes orientados a documentos e outra orientado a documentos
+Sync CassandraDb to ElasticSearch é uma ferramenta conceito feita para demostrar que é possível sincronizar dados 
+entre fontes orientada a documento e outra orientada a colunas.
+
+Antes de tudo você deve ter instalado:
+ * CassandraDB http://cassandra.apache.org/download/ 
+ 
