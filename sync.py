@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 __author__ = 'elinaldo'
 from config import SCHEMA_MIGRATION, CONF_DAEMON
+import logging
 import os
 BASE_DIR = os.path.dirname(__file__)
 location = lambda x: os.path.join(BASE_DIR, x)
 
 class Sync(object):
-
     """
     obj_01 sera sempre o object do tipo ElasticSearch
     """
@@ -25,14 +25,16 @@ class Sync(object):
                 obj_01 = eval(class_Y[1])()
                 obj_02 = eval(class_X[1])()
 
+            logging.basicConfig(filename="{0}".format(location("atividade.log")), level=logging.INFO, format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
+
             if obj_02.objects.count() != obj_01.count():
                 if obj_02.objects.count() > obj_01.count():
-                    print "Sync Cassandra to Elasticsearch"
+                    logging.info("Sync Cassandra to Elasticsearch")
                     for obj in obj_02.objects.all():
                         obj_01.save_cassandra_in_elasticsearch(obj)
                 elif obj_02.objects.count() < obj_01.count():
-                    print "Elasticsearch To Cassandra"
+                    logging.info("Sync Elasticsearch to Cassandra")
                     for obj in obj_01.find(size=CONF_DAEMON.get("LIMIT")):
                         obj_02.save_elasticsearch_in_cassandra(obj)
             else:
-                print 'Dados Sincronizados'
+                logging.info("Dados Sincronizados")
