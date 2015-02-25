@@ -15,7 +15,6 @@ class Base(Model):
 
     def __init__(self, **values):
         self._limit = CONF_DAEMON.get("LIMIT")
-
         if "created_at" in self.__dict__.keys():
             self.created_at = self.__dict__["created_at"]
         super(Model, self).__init__(**values)

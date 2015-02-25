@@ -11,6 +11,7 @@ class Base(object):
     id = columns.UUID(primary_key=True, default=uuid.uuid4())
 
     __abstract__ = True
+    __table__ = None
 
     def __init__(self):
         if not "created_at" in self.__dict__.keys():
@@ -18,9 +19,12 @@ class Base(object):
 
     @property
     def class_name(self):
-        s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', self.__class__.__name__)
-        s1 = re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
-        return "_".join(s1.split("_")[:-2])
+        if self.__table__:
+            return self.__table__
+        else:
+            s1 = re.sub('(.)([A-Z][a-z]+)', r'\1_\2', self.__class__.__name__)
+            s1 = re.sub('([a-z0-9])([A-Z])', r'\1_\2', s1).lower()
+            return "_".join(s1.split("_")[:-2])
 
     def save(self):
         if "id" in self.__dict__.keys():
