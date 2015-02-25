@@ -75,12 +75,12 @@ CREATE TABLE posts (
 ```
 
 ```   
-    from cqlengine import columns
-    from models.base_cassandra import Base
+from cqlengine import columns
+from models.base_cassandra import Base
     
-    class Posts(Base):
-        description = columns.Text()
-        title = columns.Text()
+class Posts(Base):
+     description = columns.Text()
+     title = columns.Text()
         
 ```
 
@@ -89,4 +89,5 @@ Veja a Relação de mapeamentos de nomes entre o Cassandra Class e Cassandra Tab
 http://cqlengine.readthedocs.org/en/latest/topics/models.html#cqlengine.models.Model.__table_name__
 
  
+ Por padrão é criado automático o **created_at** no Cassandra e ElasticSearch
  
