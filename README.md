@@ -6,4 +6,6 @@ entre fontes orientada a documento e outra orientada a colunas.
  * ElasticSearch http://www.elasticsearch.org/overview/elkdownloads/
  * Python >= 2.7
  
- 
+# Install Depêndencias do Python:
+ Dentro do Projeto existe o arquivo requirements contento os pacotes que você deve instalar no Python
+ * pip install -r requirements.txt
