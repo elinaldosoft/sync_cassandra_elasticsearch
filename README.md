@@ -102,5 +102,7 @@ Na raiz do projeto existe o arquivo **main.py** onde você tem a opção de:
 Agradeço ao http://www.jejik.com/articles/2007/02/a_simple_unix_linux_daemon_in_python/
 utilizei uma classe muito boa para rodar aplicativos em daemon.
 
-# Para Futuro 
+# Para o Futuro
+O Sync Cassandra ElasticSearch está em desevolvimento essa versão é ALFA temos que melhorar as Exceptions, Utilizar Threads,
+Sharding. É padrões mais sólidos de Design patterns replication.
 
