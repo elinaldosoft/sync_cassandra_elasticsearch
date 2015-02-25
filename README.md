@@ -38,7 +38,7 @@ entre fontes orientada a documento e outra orientada a colunas.
   __ table__ para alterar o nome de onde deve ser salvo os dados:
  
  ```
- from cqlengine import columns
+    from cqlengine import columns
     from models.base_elasticsearch import Base
     
     class TestElasticSearch(Base):
@@ -52,3 +52,16 @@ entre fontes orientada a documento e outra orientada a colunas.
  Se você observar bem estamos utilizando o pacote **cqlengine** para fazer o mapeamento dos fields do ElasticSearch 
  sendo que este pacote é um ORM para o cassandra. Pude observar que poderia desfrutar desse recurso de mapeamento 
  tanto para o cassandra e elasticseach
+ 
+### Padrão Cassandra Class
+
+```
+    from cqlengine import columns
+    from models.base_cassandra import Base
+    class Posts(Base):
+        description = columns.Text()
+        title = columns.Text()
+```
+
+ 
+ 
