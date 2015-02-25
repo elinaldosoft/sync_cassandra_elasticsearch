@@ -59,7 +59,7 @@ entre fontes orientada a documento e outra orientada a colunas.
 No cassandra você deve criar o esquema de fields antes de salvar os dados:
 
 ```
-    CREATE KEYSPACE cassandra_db WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+   CREATE KEYSPACE cassandra_db WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
     
     USE cassandra_db;
     
@@ -82,6 +82,10 @@ No cassandra você deve criar o esquema de fields antes de salvar os dados:
         title = columns.Text()
         
 ```
+
+Veja a Relação de mapeamentos de nomes entre o Cassandra Class e Cassandra Table Name:
+
+http://cqlengine.readthedocs.org/en/latest/topics/models.html#cqlengine.models.Model.__table_name__
 
  
  
