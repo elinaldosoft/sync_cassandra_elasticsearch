@@ -59,17 +59,17 @@ entre fontes orientada a documento e outra orientada a colunas.
 No cassandra você deve criar o esquema de fields antes de salvar os dados:
 
 ```
-   CREATE KEYSPACE cassandra_db WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+CREATE KEYSPACE cassandra_db WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
     
-    USE cassandra_db;
+USE cassandra_db;
     
-    CREATE TABLE posts (
-        id uuid,
-        title text,
-        description text,
-        created_at bigint,
-        PRIMARY KEY (id)
-    );
+CREATE TABLE posts (
+    id uuid,
+    title text,
+    description text,
+    created_at bigint,
+    PRIMARY KEY (id)
+);
     
 ```
 
