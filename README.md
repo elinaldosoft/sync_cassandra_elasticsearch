@@ -25,9 +25,24 @@ entre fontes orientada a documento e outra orientada a colunas.
  ```
     from cqlengine import columns
     from models.base_cassandra import Base
-    class Test(Base):
+    
+    class TestElasticSearch(Base):
         atributo_a = columns.Text()
         atributo_b = columns.Integer()
-        atributo_c = Float()
+        atributo_c = columns.Float()
+        
  ```
+ Por padrão o nome da coleção no ElasticSearch vai ficar **test** sendo que você tem a opção de utilizar o paramentro
+ **__table__** para alterar o nome de onde deve ser salvo os dados:
  
+ ```
+ from cqlengine import columns
+    from models.base_cassandra import Base
+    
+    class TestElasticSearch(Base):
+        atributo_a = columns.Text()
+        atributo_b = columns.Integer()
+        atributo_c = columns.Float()
+        
+        __table__ = 'logs'
+ ```
