@@ -89,5 +89,18 @@ Veja a Relação de mapeamentos de nomes entre o Cassandra Class e Cassandra Tab
 http://cqlengine.readthedocs.org/en/latest/topics/models.html#cqlengine.models.Model.__table_name__
 
  
- Por padrão é criado automático o **created_at** no Cassandra e ElasticSearch
+ Por padrão é criado automático o field **created_at** no Cassandra e ElasticSearch
  
+# Daemon
+
+Na raiz do projeto existe o arquivo **main.py** onde você tem a opção de:
+
+```
+   $ python main.py start|stop|restart
+```
+
+Agradeço ao http://www.jejik.com/articles/2007/02/a_simple_unix_linux_daemon_in_python/
+utilizei uma classe muito boa para rodar aplicativos em daemon.
+
+# Para Futuro 
+
