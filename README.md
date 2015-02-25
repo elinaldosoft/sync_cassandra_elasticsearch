@@ -107,5 +107,6 @@ Leia o config.py
 
 # Para o Futuro
 O Sync Cassandra ElasticSearch está em desevolvimento essa versão é ALFA temos que melhorar as Exceptions, Utilizar Threads,
-Sharding. É padrões mais sólidos de Design patterns replication.
+Sharding. É padrões mais sólidos de Design patterns replication. O importante neste primeiro momento e fixar o conceito de
+replicação de dados entre o Cassandra e ElasticSearch
 
