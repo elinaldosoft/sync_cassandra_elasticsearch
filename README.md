@@ -14,9 +14,9 @@ entre fontes orientada a documento e outra orientada a colunas.
  ```
  
 # Padronização de Classes:
- Por padrão as classes do ElasticSearch deve iniciar sempre neste formado:
+ Por padrão as classes do ElasticSearch deve iniciar sempre neste formado.
  
- ### Padrão ElasticSearch Class
+### Padrão ElasticSearch Class
  
  ```
  NomeDaClassElasticSearch
