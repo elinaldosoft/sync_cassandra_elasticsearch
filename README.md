@@ -51,16 +51,36 @@ entre fontes orientada a documento e outra orientada a colunas.
  
  Se você observar bem estamos utilizando o pacote **cqlengine** para fazer o mapeamento dos fields do ElasticSearch 
  sendo que este pacote é um ORM para o cassandra. Pude observar que poderia desfrutar desse recurso de mapeamento 
- tanto para o cassandra e elasticseach
+ tanto para o cassandra e elasticseach. No ElasticSearch você não precisa definir os campos que devem existe tudo é criado
+ dinamicamente.
  
 ### Padrão Cassandra Class
 
+No cassandra você deve criar o esquema de fields antes de salvar os dados:
+
 ```
+    CREATE KEYSPACE cassandra_db WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+    
+    USE cassandra_db;
+    
+    CREATE TABLE posts (
+        id uuid,
+        title text,
+        description text,
+        created_at bigint,
+        PRIMARY KEY (id)
+    );
+    
+```
+
+```   
     from cqlengine import columns
     from models.base_cassandra import Base
+    
     class Posts(Base):
         description = columns.Text()
         title = columns.Text()
+        
 ```
 
  
