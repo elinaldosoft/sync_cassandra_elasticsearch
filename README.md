@@ -25,28 +25,29 @@ entre fontes orientada a documento e outra orientada a colunas.
  Todas as classes do Tipo ElasticSearch deve herdar da class Base:
  
  ```
-    from cqlengine import columns
-    from models.base_elasticsearch import Base
-    
-    class TestElasticSearch(Base):
-        atributo_a = columns.Text()
-        atributo_b = columns.Integer()
-        atributo_c = columns.Float()
+from cqlengine import columns
+from models.base_elasticsearch import Base
+
+class TestElasticSearch(Base):
+    atributo_a = columns.Text()
+    atributo_b = columns.Integer()
+    atributo_c = columns.Float()
         
  ```
  Por padrão o nome da coleção no ElasticSearch vai ficar **test** sendo que você tem a opção de utilizar o paramentro
   __ table__ para alterar o nome de onde deve ser salvo os dados:
  
  ```
-    from cqlengine import columns
-    from models.base_elasticsearch import Base
+from cqlengine import columns
+from models.base_elasticsearch import Base
     
-    class TestElasticSearch(Base):
-        atributo_a = columns.Text()
-        atributo_b = columns.Integer()
-        atributo_c = columns.Float()
-        
-        __table__ = 'logs'
+class TestElasticSearch(Base):
+    atributo_a = columns.Text()
+    atributo_b = columns.Integer()
+    atributo_c = columns.Float()
+    
+    __table__ = 'logs'
+    
  ```
  
  Se você observar bem estamos utilizando o pacote **cqlengine** para fazer o mapeamento dos fields do ElasticSearch 
