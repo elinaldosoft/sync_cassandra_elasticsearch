@@ -6,7 +6,7 @@ entre fontes orientada a documento e outra orientada a colunas.
  * ElasticSearch http://www.elasticsearch.org/overview/elkdownloads/
  * Python >= 2.7
  
-# Install Depêndencias do Python:
+# Instale as Depêndencias do Python:
  Dentro do Projeto existe o arquivo requirements contento os pacotes que você deve instalar no Python:
  
  ```
@@ -14,10 +14,20 @@ entre fontes orientada a documento e outra orientada a colunas.
  ```
  
 # Padronização de Classes:
- Por padrão as classes do ElasticSearch deve iniciar sempre neste formado
+ Por padrão as classes do ElasticSearch deve iniciar sempre neste formado:
  
  ```
  NomeDaClassElasticSearch
- PostElasticSearch
+ Ex: PostElasticSearch
+ ```
+ Todas as classes do Tipo ElasticSearch deve herdar da class Base:
+ 
+ ```
+    from cqlengine import columns
+    from models.base_cassandra import Base
+    class Test(Base):
+        atributo_a = columns.Text()
+        atributo_b = columns.Integer()
+        atributo_c = Float()
  ```
  
