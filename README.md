@@ -93,7 +93,7 @@ http://cqlengine.readthedocs.org/en/latest/topics/models.html#cqlengine.models.M
  
 # Como Salvar
 
-### Casandra
+### Cassandra
 
 ```
 from models.posts_cassandra import Posts
