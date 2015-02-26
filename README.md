@@ -91,7 +91,31 @@ http://cqlengine.readthedocs.org/en/latest/topics/models.html#cqlengine.models.M
  
  Por padrão é criado automático o field **created_at** no Cassandra e ElasticSearch
  
-# Daemon
+# Como Salvar
+
+### Casandra
+
+```
+from models.posts_cassandra import Posts
+post = Posts()
+post.title = "Seraphim "
+post.description = "For Today"
+post.save()
+   
+```
+
+### ElasticSearch
+
+```
+from models.posts_elasticsearch import PostsElasticSearch
+post_elasticsearch = PostsElasticSearch()
+post_elasticsearch.title = "Overture 1928"
+post_elaticsearch.description = "Dream Theater"
+post_elaticsearch.save()
+
+```
+ 
+# Demon
 
 Na raiz do projeto existe o arquivo **main.py** onde você tem a opção de:
 
