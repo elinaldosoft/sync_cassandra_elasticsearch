@@ -115,7 +115,7 @@ post_elaticsearch.save()
 
 ```
  
-# Demon
+# Daemon
 
 Na raiz do projeto existe o arquivo **main.py** onde você tem a opção de:
 
